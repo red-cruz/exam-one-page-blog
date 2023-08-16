@@ -1,6 +1,6 @@
 <?php
-  session_start();
-  session_destroy(); // Destroy the session
-  header("Location: ../index.php"); // Redirect to homepage
-  exit;
-?>
+
+session_start();
+session_destroy(); // Destroy the session
+header("Location: ../"); // Redirect to homepage
+exit;

@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once './helpers.php';
 // Head
 include './views/layouts/header.html';
 ?>
@@ -23,7 +24,7 @@ include './views/layouts/header.html';
     </form>
   </div>
 
-  <?php include "./views/partials/login-modal.html" ?>
+  <?php include "./views/partials/login-modal.php" ?>
 </body>
 
 </html>

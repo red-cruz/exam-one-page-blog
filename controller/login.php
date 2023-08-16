@@ -17,14 +17,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $stmt->fetch(PDO::FETCH_OBJ);
 
         if ($user && $password === $user->password) {
-            $_SESSION["loggedin"] = true;
-            $_SESSION["username"] = $user["username"];
+            $_SESSION["loggedIn"] = true;
+            $_SESSION["email"] = $user->email;
 
             header("Content-Type: application/json", true, 200);
-            $response["message"] = "Logged in successfully";
+            $response["title"] = "Logged in successfully";
         } else {
-            // $response["message"] = "Wrong email or password";
-            throw new Error("Wrong email or password");
+            $response["title"] = "Wrong email or password";
         }
     } catch (\Throwable $th) {
         $response["message"] = $th;
